@@ -1,3 +1,5 @@
+import { findAllByDisplayValue } from "@testing-library/react";
+
 export const initialState = {
   user: null,
   playlists: [],
@@ -6,17 +8,39 @@ export const initialState = {
   top_artists: null,
   playing: false,
   item: null,
-  // token:
-  //   "BQA-nm3pIf14MA4vNsa8Li_23tE0p7fut3w0mWkenbLtIoHOFqZYUFrIPN9kTz01HKUcWMrKsBv0NaWsXW360v8YqSo3p2Ot1e2oCM9DQM39yL50I0ctJaTnXC8Mzh_KsFbDTjES8fmqc_mDZSmB1JjclmleO5qjY1WxyDGqXlx-PiqAf-R7 ",
 };
+
 const reducer = (state, action) => {
   console.log(action);
-
   switch (action.type) {
     case "SET_USER":
       return {
         ...state,
         user: action.user,
+      };
+
+    case "SET_PLAYING":
+      return {
+        ...state,
+        playing: action.playing,
+      };
+
+    case "SET_ITEM":
+      return {
+        ...state,
+        item: action.item,
+      };
+
+    case "SET_DISCOVER_WEEKLY":
+      return {
+        ...state,
+        discover_weekly: action.discover_weekly,
+      };
+
+    case "SET_TOP_ARTISTS":
+      return {
+        ...state,
+        top_artists: action.top_artists,
       };
 
     case "SET_TOKEN":
@@ -25,15 +49,16 @@ const reducer = (state, action) => {
         token: action.token,
       };
 
-    case "SET_PLAYLIST":
+    case "SET_SPOTIFY":
+      return {
+        ...state,
+        spotify: action.spotify,
+      };
+
+    case "SET_PLAYLISTS":
       return {
         ...state,
         playlists: action.playlists,
-      };
-    case "SET_DISCOVER_WEEKLY":
-      return {
-        ...state,
-        discover_weekly: action.discover_weekly,
       };
     default:
       return state;
