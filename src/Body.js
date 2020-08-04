@@ -1,11 +1,12 @@
 import React from 'react';
 import './Body.css'
+import Header from './Header';
 
 function Body({spotify}) {
     return (
         <div className="body" >
             <h1>body</h1>
-            <Header/>
+            <Header spotify={spotify}/>
         </div>
     )
 }
