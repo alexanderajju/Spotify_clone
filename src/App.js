@@ -39,6 +39,14 @@ function App() {
     });
   });
 
+  // 2EM9ZpRsPicCMQnEkzdLIB
+  spotify.getPlaylist("37i9dQZEVXcIJazRV9ISoM").then((response) => {
+    dispatch({
+      type: "SET_DISCOVER_WEEKLY",
+      discover_weekly: response,
+    });
+  });
+
   return (
     <div className="app">
       {token ? <Player spotify={spotify} /> : <Login />}
