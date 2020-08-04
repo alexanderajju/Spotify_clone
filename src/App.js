@@ -39,8 +39,8 @@ function App() {
     });
   });
 
-  // 2EM9ZpRsPicCMQnEkzdLIB
-  spotify.getPlaylist("37i9dQZEVXcIJazRV9ISoM").then((response) => {
+  // 2EM9ZpRsPicCMQnEkzdLIB 37i9dQZEVXcJZyENOWUFo7
+  spotify.getPlaylist("37i9dQZEVXcJZyENOWUFo7").then((response) => {
     dispatch({
       type: "SET_DISCOVER_WEEKLY",
       discover_weekly: response,
