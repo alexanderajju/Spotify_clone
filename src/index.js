@@ -6,7 +6,10 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
+    <DataLayer initalState reducer >
     <App />
+    </DataLayer>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
